@@ -1,0 +1,240 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;    
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  padding: 2rem;
+}
+
+.project {
+	background-color: #f7f7f7;
+  border: 1px solid #DDD;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 30px; 
+  max-width: 1600px;  
+}
+
+.projects{
+	background-color: #F0F0F0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 30px; 
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.image-container.aspect-ratio img {  
+    
+  object-fit: contain; /* Maintain aspect ratio */
+  margin-right: 1rem;
+}
+
+.image-container img {
+  max-width: 50%;
+  margin-right: 1rem;
+}
+.image-container iframe {
+  max-width: 50%; /* Each image takes up half of the container */
+  margin-right: 1rem; /* Add some spacing between images */
+}
+
+.image-container.horizontal {
+display: flex;
+  align-items: center;
+  overflow-x: auto; /* Add horizontal scrolling if necessary */
+  width: 100%; /* Ensure the container takes up the available width */
+
+}
+.image-container.horizontal img {
+  flex: 0 0 auto; /* Let images shrink to fit the container */
+  max-height: 500px; /* Set a maximum height to avoid excessive shrinking */
+  margin-right: 1rem; /* Add spacing between images */
+
+}
+
+
+
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.project-description-text {
+  margin-bottom: 10px;
+}
+
+.project-description.collapsed {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.expand-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: -5px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.project-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.project-description p {
+  margin-bottom: 10px;
+  max-width: 1000px;    
+}
+
+.features {
+  margin-top: 15px;
+  max-width: 1000px;
+}
+
+.features h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.features ul {
+  list-style-type: disc;
+  margin-left: 40px;
+  padding-left: 0;
+}
+
+.features li {
+  margin-bottom: 5px;
+}
+
+
+
+.project {
+  position: relative; /* Set position to relative for the button shadow */
+}
+
+
+
+
+
+/* About Me and Contact Section */
+.about-me  {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 50px; /* Add padding for spacing */
+  display: flex;
+  align-items: center;
+}
+
+.about-me-image {
+  flex: 0 0 auto; /* Keep the image fixed size */
+  width: 250px; /* Adjust the width of the round image */
+  height: 250px; /* Adjust the height of the round image */
+  border-radius: 50%; /* Make the image round */
+  overflow: hidden; /* Clip the image to be round */
+  margin-right: 50px; /* Add spacing between the image and text */
+}
+
+.about-me-image img {
+  width: 100%; /* Ensure the image fills the round container */
+  height: 100%; /* Ensure the image fills the round container */
+  object-fit: cover; /* Keep the image centered and cover the round container */
+}
+
+.about-me-text {
+  flex: 0.8; /* Allow the text to take up available space */
+}
+
+
+.contact {
+  display: flex;
+  align-items: center;
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 0 50px 30px ; /* Add padding for spacing */
+}
+.contact ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+.contact li {
+  display: inline-block; /* Display links horizontally */
+  margin-right: 20px; /* Add spacing between links */
+}
+.contact a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #007bff; /* Link color */
+  font-weight: bold; /* Bold text for links */
+}
+
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #bccfc6; /* Light grey background color */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 3px; /* Add spacing between tags */
+  font-size: 14px; /* Adjust the font size as needed */
+}

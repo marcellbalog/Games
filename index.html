@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Marcell Balog's Game Projects Portfolio</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+		<li><a>Marcell Balog  |</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="projects">
+    <div class="project"><h2>Personal Projects</h2></div>
+    <div class="project">
+      <div class="image-container">
+      		<img src="images/Lab1.png" alt="Project 1">
+    		<img src="images/Lab2.png" alt="Project 1">
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Turn-based</div>
+		<div class="tag">Local multiplayer</div>
+      <h3>Labyrinth tactics</h3>
+
+      <div class="project-description collapsed">
+	  <p>
+		 Turn-based multiplayer tactics game with grid-based movement, set in 1920s Egypt. The inspiration to create this game came from a desire to play an online board game that offers unique advantages due to its digital nature. This allows for the use of mechanics that cannot exist in a physical board game. This includes features such as hiding other players' characters while only showing yours, randomizing map generation with hidden secrets, limiting visibility to only a small area around the characters, and concealing enemy NPC movements.
+		 <br>
+		 <br>This is currently my largest ongoing personal project.				
+		 
+		 <br>
+	</p>
+	<div class="features">
+	 <h4>Notable coding features:</h4>
+	 <ul>
+		<li>Procedural generated arena: It was an important aspect to create more than just a typical labyrinth; I aimed for wider spaces and a more varied layout. The algorithm goes through multiple loops after the initial generation to accomplish several tasks, including filling closed-up spaces, refining corners, adjusting wall heights based on neighboring walls, and proportionally scattering the spawn of entities. This results in random and interesting layouts.</li>
+		<img src="images/Lab3.png" alt="Project 1">
+		<li>Grid based movement: The movement occurs at an abstract level initially within a matrix representing the map, which stores information about each grid tile. If the move is permitted based on this, the character can move physically to the desired location.</li>
+		<li>Visibility calculations: Each character only has a limited vision range around them, and that vision is also blocked by walls. It was implemented using SphereCast to check the objects around the character after each move and drawing a LineCast between them and the player to check if they are blocked by wall or not. If an object is in the sphere and not blocked, then it becomes visible and interactable to the player.</li>
+		<li>Round system: Each player has a limited amount of time taking steps with their character and doing a selected action. If they end their turn, it jumps to the next player sequentially, and after every full round, the enemies (Mummies) move.</li>
+		<li>Multiple character control: Each player can control multiple characters simultanously by switching between them during their turn.</li>
+		<li>Treasure map: Players have a treasure map, where they can spend points to reveal tiles of the map to see if there are treasures around that location. Similar to Minesweeper.</li>
+		<li>Enemy AI</li>
+		<li>Multiplayer aspect: The game supports hosting a lobby locally up to 6 players and up to 4 characters per player. The actions and events are synchronised between the players. There is also an ingame ranking to show who is leading with points during the game.</li>
+		 </ul>
+		 <br>
+		 <a>The next stage for the game is to add more characters to the base roster with their custom mechanics, and fix remaining networking bugs.</a>
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+    <div class="project">
+      <div class="image-container">
+      		<img src="images/NJ p1.png" alt="Project 1">   
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/EGUTDViP_lQ?si=kZx0b707tHYg_rHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	  </div>
+	  	<div class="tag">Unity</div>
+		<div class="tag">Endless Side-scroller</div>
+		<div class="tag">PC & Mobile support</div>
+      <h3>Powerpuff Sidescroller (Released on itch.io)</h3>
+      <div class="project-description collapsed">
+		<p>
+		  It is a small-scale casual web browser fan-game (works on mobile and PC), where the goal is to reach a highscore while flying through infinitely generating map sections. The game features a layered, dynamic background composition, sequenced 2D animations, collectible coins and scoring system, character switching, health recovery system, gameplay settings, polished movement controls, online leaderboard, unlockable items.
+		  <br>
+			I recently released this game, and it managed to achieve great popularity beyond my expectations with daily 4-5k plays even weeks after the release.
+		</p>
+		<p>The game is available to play here: <a href="https://frostmade.itch.io/super-newjeans target="_blank"">Itch.io</a></p>	
+		<div class="features">
+			<h4>Background and release</h4>
+			<ul>
+				<li>The game was made based on a concept seen in a music video as a non-profit fan-game.</li>
+				<img src="images/NJ p2.png" alt="Project 1">
+				<br> [Screenshot from the MV]
+				<li>The development process, from inception to release, took 1.5 months, which I dedicated my free time to. I shared the progress steps on social media, the compilation can be seen above.</li>
+				<li>After running a beta test with helpful participants, I successfully launched the game on itch.io and received overwhelmingly positive feedback, for which I'm very thankful.</li>
+			</ul>
+		</div>
+		<div class="features">
+			 <h4>Programming points:</h4>
+			 <ul>
+				 <li>Endless map generation where map tiles, composed as prefabs, and world effects (SFX & VFX) are instantiated at runtime and subsequently destroyed when they leave the viewport to not overload the memory.</li>
+				 <li>Smooth character movement with mobile friendly input (handles both PC and mobile controls).
+				 <li>The character movement is restricted to a fixed vertical line with upper and lower boundaries. When the player left-clicks or taps on the screen, the character will smoothly interpolate (lerp) to the height of the selected point.</li>
+				<li>Persistent saving system using json files with custom in-built versioning that handles the problem with itch.io not recognizing PlayerPrefs in different WebGL builds.</li>
+				<li>Character switching mechanics for which I used ScriptableObjects to store character data.</li>
+			</ul>
+		</div>		 
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container">
+      		<img src="images/ae1.png" alt="Project 1">
+    		<img src="images/ae2.png" alt="Project 1">
+			<img src="images/ae3.png" alt="Project 1">
+	  </div>
+		<div class="tag">Unity</div>
+		<div class="tag">Physics-based</div>
+		<div class="tag">Play Store</div>
+      <h3>Tower stacking casual game (Realeased on itch.io)</h3>
+      <div class="project-description collapsed">
+	   <div class="description-container">
+		<div class="project-description-text">
+		<div class="content-container">
+		<p>
+		 Physics based tower building fan-game, consisting of a large set of different figures to place and balance on top of each other. The inspiration came from this game: <a href="https://youtu.be/VPW2auPr9IE?si=6GZ74Acx32Gl73tJ" target="_blank">YouTube</a>. Published on Itch.io and Google Play.
+		<br>
+		 Link to play: <a href="https://frostmade.itch.io/aespa-tower" target="_blank">Itch.io</a>
+		</p>
+		</div>
+		<div class="content-container">
+		<div class="features">
+		  <h4>Features:</h4>
+		   <ul>
+			<li>To make a tile land and remain stable, I implemented a system where if the tile's velocity becomes close to zero, its rigidbody type switches to static, effectively freezing its transforms. Achieving the right balance required a significant amount of time fine-tuning the physics values. To achieve zero velocity, the player must carefully position and rotate the tile so that it remains stable upon landing.
+			</li>
+			<li>The highscore is determined by calculating the highest global point of the last successfully placed sprite asset, based on the y extents of its bounding box from the sprite renderer. </li>
+			<li>I made the game easily extendable, with a seamless pipeline for adding any number of additional tiles.</li>
+		 </ul>
+		</div>
+		</div>
+	  </div> 
+	  </div>
+	  </div>
+	  <button class="expand-button">More</button>	  
+	 
+    </div>
+	<div class="project">
+      <div class="image-container">
+      		<img src="images/ld45-1.gif" alt="Project 1">
+    		<img src="images/ld46-1.png" alt="Project 1">
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Gamejam</div>		
+		<div class="tag">Exploration</div>		
+      <h3>Ludum Dare Gamejams (LD45, LD46)</h3>
+      <div class="project-description collapsed">
+		<p>		
+		 I participated in two Ludum Dare jams, where I made the games solo within 2 days each.
+		 <br>
+		 <br>1. "Spirit Path" has an exploration gameplay, where players have to find their way through the void on narrow and unstable platforms while guiding little spirits. It consists of a pre-designed map with checkpoints, enemies and rescuable orbs following the player as companions. After the jam, I also added a procedural map generation mode. This game achieved second place in the mood category.
+		 <br>
+		<br>- Jam Theme: Start with nothing
+		<br>- Ludum Dare page: <a href="https://ldjam.com/events/ludum-dare/45/spirit-path" target="_blank">Link</a>
+		<br>- Play: <a href="https://marcellbalog.itch.io/spirit-path" target="_blank">Itch.io</a>
+		<br>
+		<br>2. "Prophet" is an unconventional, moving tower-defense style game, with the player's main objective being to assist a giant robot in reaching its destination. Players can select from various upgrade paths that introduce new defense mechanics to the robot, changing its capabilities as they progress.
+		<br>
+		<br>- Jam Theme: Keep it alive
+		<br>- Ludum Dare page: <a href="https://ldjam.com/events/ludum-dare/46/prophet" target="_blank">Link</a>
+		<br>- Play: <a href="https://marcellbalog.itch.io/prophet" target="_blank">Itch.io</a>
+
+		 <br>
+		</p>
+		<div class="features">
+		 <ul>
+		<li>One of the challenging aspects was implementing the 3D rotation and tracking mechanics for the cannons, with one of them requiring restricted movement within a specific range.</li>
+		<li>I initially wanted to implement procedural animation for the leg movements, but it didn't fit into the time constraints.</li>
+		 </ul>
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container">
+      		<img src="images/jrpg1.png" alt="Project 1">    		
+			<img src="images/jrpg3.png" alt="Project 1"> 
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Classic JRPG</div>				
+		<div class="tag">Code architecture</div>
+      <h3>JRPG battle prototype</h3>
+      <div class="project-description collapsed">
+		<p>
+		 The goal of this project was to recreate a classic turn-based JRPG battle system. 
+		<br>
+		</p>
+		<div class="features">
+		  <h4>Includes:</h4>
+		  <ul>
+			<li>Heavy use of OOP and abstraction for expandability (Characters, Enemies, Items, Abilities, Effects). Each character and enemy has attributes (Health, MP, Initiation, Luck, etc...), each item and ability has properties like damage, cost, stat gain, and they can effect multiple targets in some instances.</li>
+			<li>Queue system</li>
+			<ul><li>Each character has an initiation attribute that effects their ranking in the queue. I created a system that calculates the turn order of the active characters based on these attributes and refreshes when the player switches characters or when someone dies. </li></ul>
+			<li>Character switching</li>
+			<ul><li>There is an expandable cast of characters, but only 4 can be present on the battlefield at a time. The character in turn can be swapped to a inactive character who takes their place on the field, and updates every necessary attribute.
+			</li></ul>
+		</ul>
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container aspect-ratio">
+      		<img src="images/race6.png" alt="Project 1">
+			<img src="images/race1.png" alt="Project 1">
+    		<img src="images/race2.png" alt="Project 1">
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Local multiplayer</div>		
+		<div class="tag">Racing</div>
+		<div class="tag">Physics</div>
+      <h3>Multiplayer racing game</h3>
+      <div class="project-description collapsed">
+		<p>
+		  Reworked the Unity race demo project to have multiplayer functionality with host-client architecture and self-hosting. Added checkpoint and lap system, recalibrated the car physics and mechanics to fit my models, and added booster pickups.
+		  <br>		  
+		 <br>This one was created as a small party game with friends.
+		 <br>Play: <a href="https://marcellbalog.itch.io/private-race" target="_blank">Itch.io</a>		 (password is: "pers"; click on host to play)
+		</p>		
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container aspect-ratio">
+      		<img src="images/text1.png" alt="Project 1">
+    		<img src="images/text2.png" alt="Project 1">			
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Simulation</div>				
+		<div class="tag">Custom UDL</div>
+      <h3>Chatting simulator</h3>
+      <div class="project-description collapsed">
+		<p>
+		 In this chatting simulator the player can engage in authentic conversations with a virtual partner, choosing from preset dialogues and answer options. The dialogues can be written and customized by anyone using a user-defined language (UDL) that I created specifically for this game. This system allows creating branching storylines and realistic chat experiences, and has the flexibility and programmability to create intricate conversations. However, as I lacked the talent for extensive dialogue writing, the project reached a standstill after implementing all the features and UI elements.
+		 <br>
+		</p>
+		<div class="features">
+		  <h4>Features:</h4>
+		   <ul>
+			<li>Chat saving and restoring</li>
+			<li>Realistic animations and timings</li>
+			<li>Dialogue and picture upload support</li>
+			<ul>
+				<li> Dialogues and pictures can be conveniently added for the virtual partners directly from the game menu. These entries are then organized and attributed to the corresponding partner under their respective names.</li>
+				<li> The game supports reading from multiple text files, so it's also possible to slice up the dialogues for better comprehension and clarity.</li>
+			</ul>
+			<li>The dialogue algorithm starts with the first row in the text file and progresses sequentially, moving downward one row at a time. There are multiple different actions that can redirect the flow to a new section within the file. More about these below…</li>
+			</ul>
+		</div>
+		<div class="features">
+		 <h4>Example dialogue:</h4>
+		 This example demonstrates some of the features of the UDL. It's based on the ingame screenshot above, with some slight modifications.
+		 <img src="images/text4.png" alt="Project 1">
+		<br><a>Some of the highlighted commands:</a>
+		 <ul>
+			<li>[i] and [p] writing out the texts</li>
+			<li>* marks the choices</li>
+			<li>{ } for storing memory values and different actions</li>
+			<li>>-- --< => for connecting sections</li>
+		</ul>
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container">
+      		<img src="images/stealth1.png" alt="Project 1">    		
+			<img src="images/stealth2.png" alt="Project 1"> 
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Stealth mechanics</div>						
+      <h3>Stealth game prototype</h3>
+      <div class="project-description collapsed">
+		<p>
+		   2.5D top-down stealth game prototype. 
+		  <br>
+		</p>
+		<div class="features">
+		  <h4>Features:</h4>
+		   <ul>
+			<li>Guards with state machine system implemented for idle/alerted/chasing states. </li>
+			<li>Dynamic room visibility depending on player location.</li>
+		 </ul>
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+	<div class="project">
+      <div class="image-container horizontal">
+      		<img src="images/const1.png" alt="Project 1">    		
+			<img src="images/const2.png" alt="Project 1">    		
+			<img src="images/const3.png" alt="Project 1">    		
+		</div>
+		<div class="tag">Unity</div>
+		<div class="tag">Procedural generation</div>						
+		<div class="tag">Shaders</div>
+      <h3>Constellation generator</h3>
+      <div class="project-description collapsed">
+		<p>
+		   This was a collaborative project in a team of two to create a constellation generator. It heavily relies on math calculations. The background was created using shadergraph, the project was developed in Unity.
+		  <br>
+		</p>
+		<div class="features">
+		  <h4>Algorithm breakdown:</h4>
+		  <ul>
+			1. Adding the stars (Complexity: Moderate)
+			<ul>
+			  <li>Generating stars and ensuring they are placed at a minimum distance from each other.</li>
+			  <li>For each star, it generates random X and Y coordinates within certain ranges (1000 to 4000) while avoiding collisions with existing stars.</li>
+			  </ul>
+			
+			2. Getting the closest stars (Complexity: Moderate to High)
+				<ul>
+				  <li>Finds the closest star to a given star within the constellation based on distance.</li>
+				  <li>It keeps track of the closest and second closest stars based on the chosen algorithm. (The second closest star is particularly significant because, in the case where A's closest star is B, it will always mean that conversely B's closest star is A. However, this principle does not apply to the second closest stars.)</li>
+				  <li>The function may mark stars as "used" to avoid selecting them again.</li>
+				</ul>
+			
+			3. Drawing the lines between the stars  (Complexity: Moderate)
+				<ul>
+				  <li>Calculates and sets the position and rotation of a line connecting two stars by computing the angle between the two stars' positions.</li>
+				  <li>calculates the length of the line based on the distance between the stars and adjusts its size.</li>
+				</ul>
+			
+			4. Collision handling (Complexity: High)
+				<ul>
+				  <li>Collisions can occur between lines or between a line and a star.</li>
+				  <li>The function attempts to redraw the line to avoid collisions, ensuring that lines connect to stars without intersecting with other lines.</li>
+				  <li>The exact logic for redrawing depends on the specific use case and conditions. It may involve finding a different target star or adjusting the line's position and rotation.</li>
+				  <li>The difficulty with fixing the lines was ensuring there are no stars ending up with no lines, and the line count shouldn't exceed the star count.</li>
+				</ul>
+			
+			5. Centering the figure (Complexity: Moderate)
+				<ul>
+				  <li>To center the constellation figure within the display area.</li>
+				  <li>Finds the minimum and maximum coordinates among all stars to determine the constellation's width and height.</li>
+				  <li>Then, it computes the X and Y offsets needed to place the figure in the center of the screen.</li>
+				</ul>
+			
+		  </ul>			
+		</div>
+	  </div> 
+	  <button class="expand-button">More</button>
+    </div>
+    <!-- Add more projects here -->
+  </section>
+
+  <div class="about-me" id="about">
+    <div class="about-me-image">
+      <img src="images/foto1.jpg" alt="Your Image">
+    </div>
+    <div class="about-me-text">
+      <h2>About Me</h2>	  
+	  <div class="features">
+	  <ul>
+		<li> I've been enthusiastic about game development since childhood, have a passion for building and creating things</li>
+		<li> Got bachelor's and master's degrees from locally well-known universities (economics and engineering)</li>
+		<li> Have 7 years of various programming practice</li>
+		<li> Have basic knowledge in a lot of different fields --> can communicate efficiently with other departments</li>
+		<li> Excelling at problem-solving and understanding systems</li>
+		<li> Can adapt to new technologies easily</li>
+		<li> Experience in the full software development lifecycle, working from concept through completion</li>
+		<li> Outside of coding, I also like to do game design and balancing work</li>
+	  </ul>
+	  </div>
+    </div>
+  </div>
+
+  
+    <div id="contact" class="contact">    
+	<div class="contact-info">
+		<ul class="contact-links">
+		  <li><a href="mailto:marcell.balog@gmail.com">  📩  </a>marcell.balog@gmail.com </li>
+		  <li><a href="tel:+36307358885">  📲 </a>  +36 (30) 735-8885</li>
+		  <li><a href="https://www.linkedin.com/in/marcell-balog-577455198/">👤  LinkedIn</a></li>		  
+		</ul>
+	</div>
+  </div>
+ 
+
+</body>
+</html>
+
