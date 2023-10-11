@@ -42,18 +42,18 @@
 	<div class="features">
 	 <h4>Notable coding features:</h4>
 	 <ul>
-		<li>Procedural generated arena: It was an important aspect to create more than just a typical labyrinth; I aimed for wider spaces and a more varied layout. The algorithm goes through multiple loops after the initial generation to accomplish several tasks, including filling closed-up spaces, refining corners, adjusting wall heights based on neighboring walls, and proportionally scattering the spawn of entities. This results in random and interesting layouts.</li>
+		<li>Procedural generated arena: It was an important aspect to create more than just a typical labyrinth; I aimed for wider spaces and a more varied layout. The algorithm goes through multiple loops after the initial generation to accomplish several tasks, including filling closed-up spaces, refining corners, adjusting wall heights based on neighboring walls, and proportionally scattering the spawn of entities. This can result in random and interesting layouts.</li>
 		<img src="images/Lab3.png" alt="Project 1">
 		<li>Grid based movement: The movement occurs at an abstract level initially within a matrix representing the map, which stores information about each grid tile. If the move is permitted based on this, the character can move physically to the desired location.</li>
 		<li>Visibility calculations: Each character only has a limited vision range around them, and that vision is also blocked by walls. It was implemented using SphereCast to check the objects around the character after each move and drawing a LineCast between them and the player to check if they are blocked by wall or not. If an object is in the sphere and not blocked, then it becomes visible and interactable to the player.</li>
 		<li>Round system: Each player has a limited amount of time taking steps with their character and doing a selected action. If they end their turn, it jumps to the next player sequentially, and after every full round, the enemies (Mummies) move.</li>
 		<li>Multiple character control: Each player can control multiple characters simultanously by switching between them during their turn.</li>
-		<li>Treasure map: Players have a treasure map, where they can spend points to reveal tiles of the map to see if there are treasures around that location. Similar to Minesweeper.</li>
+		<li>Treasure map: Players have a treasure map, where they can spend points to reveal tiles of the map to see if there are any treasures around that location. Similar to Minesweeper.</li>
 		<li>Enemy AI</li>
 		<li>Multiplayer aspect: The game supports hosting a lobby locally up to 6 players and up to 4 characters per player. The actions and events are synchronised between the players. There is also an ingame ranking to show who is leading with points during the game.</li>
 		 </ul>
 		 <br>
-		 <a>The next stage for the game is to add more characters to the base roster with their custom mechanics, and fix remaining networking bugs.</a>
+		 <a>The next stage for the game is to add more characters to the base roster with their custom mechanics, and complete the remaining networking features.</a>
 		</div>
 	  </div> 
 	  <button class="expand-button">More</button>
@@ -66,14 +66,14 @@
 	  	<div class="tag">Unity</div>
 		<div class="tag">Endless Side-scroller</div>
 		<div class="tag">PC & Mobile support</div>
-      <h3>Powerpuff Sidescroller (Released on itch.io)</h3>
+      <h3>Powerpuff Sidescroller fan-game (Released on itch.io)</h3>
       <div class="project-description collapsed">
 		<p>
 		  It is a small-scale casual web browser fan-game (works on mobile and PC), where the goal is to reach a highscore while flying through infinitely generating map sections. The game features a layered, dynamic background composition, sequenced 2D animations, collectible coins and scoring system, character switching, health recovery system, gameplay settings, polished movement controls, online leaderboard, unlockable items.
 		  <br>
 			I recently released this game, and it managed to achieve great popularity beyond my expectations with daily 4-5k plays even weeks after the release.
 		</p>
-		<p>The game is available to play here: <a href="https://frostmade.itch.io/super-newjeans target="_blank"">Itch.io</a></p>	
+		<p>The game is available to play here: <a href="https://frostmade.itch.io/super-newjeans" target="_blank">Itch.io</a></p>	
 		<div class="features">
 			<h4>Background and release</h4>
 			<ul>
@@ -81,7 +81,8 @@
 				<img src="images/NJ p2.png" alt="Project 1">
 				<br> [Screenshot from the MV]
 				<li>The development process, from inception to release, took 1.5 months, which I dedicated my free time to. I shared the progress steps on social media, the compilation can be seen above.</li>
-				<li>After running a beta test with helpful participants, I successfully launched the game on itch.io and received overwhelmingly positive feedback, for which I'm very thankful.</li>
+				<li>After running a beta test with helpful participants, I successfully launched the game on itch.io and received overwhelmingly positive feedback, for which I'm very proud.</li>
+				<li>After release, I started collaborating with an artist who offered his help in creating more assets.</li>
 			</ul>
 		</div>
 		<div class="features">
@@ -92,6 +93,7 @@
 				 <li>The character movement is restricted to a fixed vertical line with upper and lower boundaries. When the player left-clicks or taps on the screen, the character will smoothly interpolate (lerp) to the height of the selected point.</li>
 				<li>Persistent saving system using json files with custom in-built versioning that handles the problem with itch.io not recognizing PlayerPrefs in different WebGL builds.</li>
 				<li>Character switching mechanics for which I used ScriptableObjects to store character data.</li>
+				<li>For version control, I'm using separate DEV and Live branches to be able to release bug fix patches for released versions while also working on new features.</li>
 			</ul>
 		</div>		 
 	  </div> 
@@ -112,7 +114,7 @@
 		<div class="project-description-text">
 		<div class="content-container">
 		<p>
-		 Physics based tower building fan-game, consisting of a large set of different figures to place and balance on top of each other. The inspiration came from this game: <a href="https://youtu.be/VPW2auPr9IE?si=6GZ74Acx32Gl73tJ" target="_blank">YouTube</a>. Published on Itch.io and Google Play.
+		 Physics based tower building fan-game, consisting of a large set of different figures to place and balance on top of each other. The inspiration came from this game: <a href="https://youtu.be/VPW2auPr9IE?si=6GZ74Acx32Gl73tJ" target="_blank">YouTube</a>. Published for WebGL and Android.
 		<br>
 		 Link to play: <a href="https://frostmade.itch.io/aespa-tower" target="_blank">Itch.io</a>
 		</p>
@@ -145,7 +147,7 @@
       <h3>Ludum Dare Gamejams (LD45, LD46)</h3>
       <div class="project-description collapsed">
 		<p>		
-		 I participated in two Ludum Dare jams, where I made the games solo within 2 days each.
+		 I participated in two Ludum Dare jams, where I made these games solo within 2 days each.
 		 <br>
 		 <br>1. "Spirit Path" has an exploration gameplay, where players have to find their way through the void on narrow and unstable platforms while guiding little spirits. It consists of a pre-designed map with checkpoints, enemies and rescuable orbs following the player as companions. After the jam, I also added a procedural map generation mode. This game achieved second place in the mood category.
 		 <br>
@@ -227,10 +229,10 @@
 		<div class="tag">Unity</div>
 		<div class="tag">Simulation</div>				
 		<div class="tag">Custom UDL</div>
-      <h3>Chatting simulator</h3>
+      <h3>Chatting simulator with custom UDL</h3>
       <div class="project-description collapsed">
 		<p>
-		 In this chatting simulator the player can engage in authentic conversations with a virtual partner, choosing from preset dialogues and answer options. The dialogues can be written and customized by anyone using a user-defined language (UDL) that I created specifically for this game. This system allows creating branching storylines and realistic chat experiences, and has the flexibility and programmability to create intricate conversations. However, as I lacked the talent for extensive dialogue writing, the project reached a standstill after implementing all the features and UI elements.
+		 In this chatting simulator the player can engage in realistic conversations with a virtual partner, choosing from preset dialogues and answer options. The dialogues can be written and customized by anyone using a user-defined language (UDL) that I created specifically for this game. This system allows creating branching storylines and realistic chat experiences, and has the flexibility and programmability to create intricate conversations. What I was aiming for with this project was to enable users to create their own self-made chat partner dialogues with the use of the UDL, and build a public community catalogue of virtual chat profiles that people can access and can contribute to.
 		 <br>
 		</p>
 		<div class="features">
@@ -302,20 +304,20 @@
 		<div class="features">
 		  <h4>Algorithm breakdown:</h4>
 		  <ul>
-			1. Adding the stars (Complexity: Moderate)
+			1. Generating the stars (Complexity: Moderate)
 			<ul>
 			  <li>Generating stars and ensuring they are placed at a minimum distance from each other.</li>
 			  <li>For each star, it generates random X and Y coordinates within certain ranges (1000 to 4000) while avoiding collisions with existing stars.</li>
 			  </ul>
 			
-			2. Getting the closest stars (Complexity: Moderate to High)
+			2. Calculating the closest stars (Complexity: Moderate to High)
 				<ul>
 				  <li>Finds the closest star to a given star within the constellation based on distance.</li>
 				  <li>It keeps track of the closest and second closest stars based on the chosen algorithm. (The second closest star is particularly significant because, in the case where A's closest star is B, it will always mean that conversely B's closest star is A. However, this principle does not apply to the second closest stars.)</li>
 				  <li>The function may mark stars as "used" to avoid selecting them again.</li>
 				</ul>
 			
-			3. Drawing the lines between the stars  (Complexity: Moderate)
+			3. Drawing lines between the stars  (Complexity: Moderate)
 				<ul>
 				  <li>Calculates and sets the position and rotation of a line connecting two stars by computing the angle between the two stars' positions.</li>
 				  <li>calculates the length of the line based on the distance between the stars and adjusts its size.</li>
